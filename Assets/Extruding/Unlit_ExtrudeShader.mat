@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_OutlineShader
-  m_Shader: {fileID: 4800000, guid: 3c78fbeeb65f29d4fb9c7b2ff2de77eb, type: 3}
+  m_Name: Unlit_ExtrudeShader
+  m_Shader: {fileID: 4800000, guid: fa8982583f37abd4d9ffbfeb4b9cfae4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -29,11 +29,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Glossiness: 0.5
-    - _Metallic: 0
-    - _OutlineWidth: 0.0485
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0.15806337, g: 0.9056604, b: 0.28578964, a: 1}
+    - _Amount: 0.36
+    - _Amplitude: 0.223
+    - _ExtrusionAmount: -0.403
+    - _Frequency: 5
+    - _Speed: 0.81
+    m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
