@@ -6,17 +6,22 @@ Shader "Unlit/VertexAnim"
         _Speed ("Speed", Range(0,10)) = 0
         _Amount("Amount", Range(0,5)) = 0
         _Offset("Offset", float) = 1
+        _Alpha("Alpha", Range(0, 1)) = 1
     }
 
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags {"Queue" = "Transparent" "RenderType"="Transparent" }
         LOD 200
 
-        Cull Off // This line disables back-face culling
+        ZWrite Off
+        Blend SrcAlpha OneMinusSrcAlpha 
+        //Cull Off // This line disables back-face culling
 
         CGPROGRAM
-        #pragma surface surf Lambert vertex:vert
+
+        //#pragma surface surf Lambert vertex:vert
+        #pragma surface surf Lambert fullforwardshadows addshadow vertex:vert alpha
         #pragma target 3.0
 
         sampler2D _MainTex;
@@ -45,13 +50,13 @@ Shader "Unlit/VertexAnim"
 			v.vertex.x += _Amount * lerp(sin(time), sin(time+_Offset), getVertexLerpValue(v.vertex.y));
 		}
 
-
+        float _Alpha;
 		void surf (Input IN, inout SurfaceOutput o) 
 		{
 			half4 c = tex2D (_MainTex, IN.uv_MainTex);
 			
 			o.Albedo = c.rgb;
-			o.Alpha = c.a;
+			o.Alpha = _Alpha;
 		}
             ENDCG
     }
