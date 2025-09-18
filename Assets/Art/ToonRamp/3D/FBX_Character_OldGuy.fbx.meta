@@ -3,7 +3,17 @@ guid: 60a354df7f205624aa2463685796361f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rostos
+    second: {fileID: 2100000, guid: e3efc6c78c7088a428a4b55464e024b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roupas
+    second: {fileID: 2100000, guid: eeea8fe9c5afb314aaf750cf659aa8d4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
